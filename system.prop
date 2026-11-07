@@ -16,3 +16,17 @@ ro.dynamic.full_size=13421772800
 vendor.usb.configfs=1
 vendor.usb.rps_mask=0
 vendor.usb.uvc.function.init=1
+
+# Display
+vendor.display.enable_spr=0
+ro.sf.lcd_density=520
+
+# Haptics
+ro.odm.mm.vibrator.audio_haptic_support=true
+ro.odm.mm.vibrator.lowPowerMode=true
+ro.odm.mm.vibrator.resonant_frequency=170
+ro.odm.mm.vibrator.slide_effect_protect_time=35
+ro.odm.mm.vibrator.sys_path=/sys/class/qcom-haptics
+ro.odm.mm.vibrator.device_type=agm
+ro.vendor.mm.vibrator.sys_path=/sys/class/qcom-haptics
+persist.vendor.audio.vibrator.vibratorQCOM=true
