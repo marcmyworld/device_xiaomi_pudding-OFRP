@@ -4,25 +4,25 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Configure base.mk
+# Base inheritance
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Configure core_64_bit_only.mk
+# Set support for 64-bit only
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
-# Configure virtual_ab_ota compression_with_xor.mk
+# Add support for virtual ab ota along with xor compression
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_with_xor.mk)
 
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Configure twrp config common.mk
+# Inherit common twrp configurations
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # API
-BOARD_SHIPPING_API_LEVEL := 202504
-PRODUCT_SHIPPING_API_LEVEL := 36
-PRODUCT_TARGET_VNDK_VERSION := 36
+BOARD_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_TARGET_VNDK_VERSION := 34
 
 # Build
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false

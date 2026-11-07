@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/sm8850
+DEVICE_PATH := device/xiaomi/pudding
 
 # Inherit from device.mk configuration
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 ## Device identifier
-PRODUCT_DEVICE := sm8850
-PRODUCT_NAME := twrp_sm8850
+PRODUCT_DEVICE := pudding
+PRODUCT_NAME := twrp_pudding
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := sm8850
+PRODUCT_MODEL := Xiaomi 17
 PRODUCT_MANUFACTURER := Xiaomi

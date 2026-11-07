@@ -5,4 +5,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_sm8850.mk
+    $(LOCAL_DIR)/twrp_pudding.mk
+
+COMMON_LUNCH_CHOICES := \
+    twrp_pudding-userdebug \
+    twrp_pudding-eng
