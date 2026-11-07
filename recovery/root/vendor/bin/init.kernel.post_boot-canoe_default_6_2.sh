@@ -48,16 +48,8 @@ echo $sched_rt_runtime_us > /proc/sys/kernel/sched_rt_runtime_us
 project=`getprop ro.product.device`
 osversion=`getprop ro.mi.os.debug.version.code`
 if [ "$osversion" != "3.0" ]; then
-    case "$project" in
-        "popsicle"|"pudding")
-        echo 4196 > /dev/cpuctl/foreground/cpu.shares
-        echo 768 > /dev/cpuctl/background/cpu.shares
-    ;;
-    "nezha")
-        echo 4096 > /dev/cpuctl/foreground/cpu.shares
-        echo 512 > /dev/cpuctl/background/cpu.shares
-    ;;
-    esac
+    echo 4196 > /dev/cpuctl/foreground/cpu.shares
+    echo 768 > /dev/cpuctl/background/cpu.shares
 fi
 if [ -d /proc/sys/walt ]; then
 	# configure maximum frequency when CPUs are partially halted

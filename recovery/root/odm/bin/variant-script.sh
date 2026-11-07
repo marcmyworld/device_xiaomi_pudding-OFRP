@@ -29,57 +29,14 @@ set_vibrator_props() {
 # Variant-specific configuration
 #-------------------------------------------------
 case "$variant" in
-"pudding")
+"pudding"|*)
+    variant="pudding"
     model="$base_name 17"
     resetprop ro.twrp.device_version "Xiaomi_17"
     resetprop ro.twrp.y_offset "116"
     resetprop ro.twrp.h_offset "-116"
     resetprop vendor.display.enable_spr "1"
     resetprop ro.twrp.weaver "thales"
-    set_vibrator_props "170" "35" "/sys/class/qcom-haptics" "ff"
-    ;;
-
-"pandora")
-    model="$base_name 17 Pro"
-    resetprop ro.twrp.device_version "Xiaomi_17_Pro"
-    resetprop ro.twrp.y_offset "116"
-    resetprop ro.twrp.h_offset "-116"
-    resetprop vendor.display.enable_spr "1"
-    resetprop vendor.display.enable_spr_bypass "0"
-    resetprop ro.twrp.weaver "nxp"
-    set_vibrator_props "170" "35" "/sys/class/qcom-haptics" "ff"
-    ;;
-
-"popsicle")
-    model="$base_name 17 Pro Max"
-    resetprop ro.twrp.device_version "Xiaomi_17_Pro_Max"
-    resetprop ro.twrp.y_offset "116"
-    resetprop ro.twrp.h_offset "-116"
-    resetprop ro.odm.mm.vibrator.cirrus "true"
-    resetprop vendor.display.enable_spr "1"
-    resetprop vendor.display.enable_spr_bypass "1"
-    resetprop ro.twrp.weaver "nxp"
-    set_vibrator_props "130" "20" "/sys/bus/i2c/drivers/cs40l26/13-0043" "ff"
-    ;;
-
-"nezha")
-    model="$base_name 17 Ultra"
-    resetprop ro.twrp.device_version "Xiaomi_17_Ultra"
-    resetprop ro.twrp.y_offset "116"
-    resetprop ro.twrp.h_offset "-116"
-    resetprop vendor.display.enable_spr "1"
-    resetprop vendor.display.enable_spr_bypass "1"
-    resetprop ro.twrp.weaver "goodix"
-    set_vibrator_props "170" "20" "/sys/class/qcom-haptics" "ff"
-    ;;
-
-*)
-    #-----------------------------------------
-    # Default configuration
-    #-----------------------------------------
-    log "Unknown variant: $variant, applying default configuration (SM8850)"
-    variant="SM8850"
-    model="SM8850"
     set_vibrator_props "170" "35" "/sys/class/qcom-haptics" "ff"
     ;;
 esac
