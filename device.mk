@@ -44,3 +44,6 @@ TWRP_REQUIRED_MODULES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
+
+# Inherit OrangeFox configuration
+$(call inherit-product, $(DEVICE_PATH)/fox_pudding.mk)

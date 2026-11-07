@@ -9,4 +9,6 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     twrp_pudding-userdebug \
-    twrp_pudding-eng
+    twrp_pudding-eng \
+    twrp_pudding-ap2a-userdebug \
+    twrp_pudding-ap2a-eng
