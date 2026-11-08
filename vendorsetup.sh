@@ -19,20 +19,22 @@
 FDEVICE="pudding"
 
 fox_get_target_device() {
-local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
+local script_path="${BASH_SOURCE[0]}"
+   [ -n "$ZSH_VERSION" ] && script_path="${(%):-%x}"
+local chkdev=$(echo "$script_path" | grep -w $FDEVICE)
    if [ -n "$chkdev" ]; then
       FOX_BUILD_DEVICE="$FDEVICE"
    else
-      chkdev=$(set | grep BASH_ARGV | grep -w $FDEVICE)
+      chkdev=$(set | grep -E "BASH_ARGV|zsh_eval_context" | grep -w $FDEVICE)
       [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
    fi
 }
 
-if [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; then
+if [ -z "$1" ] || [ "$1" = "$FDEVICE" ] || echo "$1" | grep -qw "$FDEVICE"; then
    fox_get_target_device
 fi
 
-if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
+if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ] || echo "$1" | grep -qw "$FDEVICE"; then
 	export LC_ALL="C"
 
 	# Architecture: Seamless Virtual A/B device
