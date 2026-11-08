@@ -62,7 +62,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_SETTINGS_ROOT_DIRECTORY=/data/recovery
 	export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
 
-	# Target devices for flashable zip assertion verification (Global, Indian, Regional)
+	# Target devices for flashable zip assertion verification
 	export TARGET_DEVICE_ALT="pudding,pudding_global,pudding_in"
 	export FOX_TARGET_DEVICES="$TARGET_DEVICE_ALT"
 
@@ -78,4 +78,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Build metadata
 	export FOX_BUILD_TYPE=Beta
 	export FOX_MAINTAINER_PATCH_VERSION=1
+
+	# Additional configurations
+	export FOX_NO_BLANK_DT2W=1
 fi

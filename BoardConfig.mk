@@ -8,6 +8,7 @@
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Rules
+# Allow duplicate build rules
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
@@ -15,6 +16,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
+# Empty since no other ABI available
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 
@@ -24,9 +26,9 @@ TARGET_BOOTLOADER_BOARD_NAME := $(PRODUCT_PLATFORM)
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := xiaomi_sm8850
+TARGET_BOARD_PLATFORM := canoe
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno840
-QCOM_BOARD_PLATFORMS += xiaomi_sm8850
+QCOM_BOARD_PLATFORMS += xiaomi_sm8850 canoe sm8850
 
 # Kernel
 BOARD_KERNEL_IMAGE_NAME       := Image
@@ -63,6 +65,7 @@ AB_OTA_PARTITIONS += \
 BOARD_AVB_ENABLE := true
 
 # Partitions
+# Enables Project Treble property isolation to split build properties across individual partition .prop files
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Workaround for error copying vendor files to recovery ramdisk
@@ -83,7 +86,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(($(BOARD_SUPER_PARTITION_SI
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor vendor_dlkm odm system_dlkm
 
 # System as root
-BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist soccp
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist soccp usbotg
 
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -143,7 +146,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_EXTRA_LANGUAGES := true
-TW_DEFAULT_BRIGHTNESS := 250
+TW_DEFAULT_LANGUAGE := en
+TW_DEFAULT_BRIGHTNESS := 750
 TW_EXCLUDE_APEX := true
 TW_STATUS_ICONS_ALIGN := center
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
@@ -153,3 +157,4 @@ TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko q
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone25/temp" # CPU-0-0-0
 TW_BACKUP_EXCLUSIONS := /data/fonts,/data/adb/ap,/data/adb/ksu
+TW_NO_SCREEN_BLANK := true
