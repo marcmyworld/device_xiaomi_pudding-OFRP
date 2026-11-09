@@ -69,11 +69,11 @@ on property:twrp.modules.loaded=true
 on property:vendor.sys.listeners.registered=true
     start odm.vibratorfeature-hal-service
     start odm.touch_report
-
-on property:twrp.adsp.ready=true && property:vendor.sys.listeners.registered=true
-    start vendor.health-default
     start vendor.secure_element
     start odm.weaver_hal_service
+
+on property:twrp.adsp.ready=true
+    start vendor.health-default
 
 service vendor.wait-adsp /system/bin/sh /vendor/bin/wait-adsp-ready.sh
     class hal
