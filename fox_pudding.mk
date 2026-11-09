@@ -43,6 +43,9 @@ OF_OPTIONS_LIST_NUM := 8
 # Set 1 if has a notification/charging led
 OF_USE_GREEN_LED := 0
 
+# Set Default Timezone
+OF_DEFAULT_TIMEZONE := IST-5:30;IST
+
 
 # --------------------------------------------------------------------------
 # Flashlight (Torch) Integration
