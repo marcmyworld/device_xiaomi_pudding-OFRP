@@ -22,7 +22,7 @@ vendor.display.enable_spr=0
 ro.sf.lcd_density=520
 
 # Haptics
-ro.odm.mm.vibrator.audio_haptic_support=true
+ro.odm.mm.vibrator.audio_haptic_support=false
 ro.odm.mm.vibrator.lowPowerMode=true
 ro.odm.mm.vibrator.resonant_frequency=170
 ro.odm.mm.vibrator.slide_effect_protect_time=35
