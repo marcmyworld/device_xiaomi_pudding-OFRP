@@ -86,7 +86,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(($(BOARD_SUPER_PARTITION_SI
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor vendor_dlkm odm system_dlkm
 
 # System as root
-BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist soccp usbotg
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist soccp usbotg usb_otg
 
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
