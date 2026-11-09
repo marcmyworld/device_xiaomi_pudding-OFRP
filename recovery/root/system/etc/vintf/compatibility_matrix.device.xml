@@ -89,7 +89,7 @@
         device/xiaomi/missi/device_framework_compatibility_matrix/miteetui/vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/mimd/vendor_framework_compatibility_matrix.xml
 -->
-<compatibility-matrix version="9.0" type="framework">
+<compatibility-matrix version="8.0" type="framework">
     <hal format="aidl">
         <name>android.hardware.authsecret.qti.spu</name>
         <interface>
@@ -2824,7 +2824,6 @@
         <sepolicy-version>33.0</sepolicy-version>
         <sepolicy-version>34.0</sepolicy-version>
         <sepolicy-version>202404</sepolicy-version>
-        <sepolicy-version>202504</sepolicy-version>
     </sepolicy>
     <avb>
         <vbmeta-version>1.0</vbmeta-version>

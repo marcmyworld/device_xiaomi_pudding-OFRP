@@ -6,7 +6,7 @@
         vendor/xiaomi/proprietary/minet/port/src/manifest_aidl.xml
         vendor/xiaomi/proprietary/mipowerhal/port/src/manifest_aidl.xml
 -->
-<manifest version="9.0" type="device" target-level="202504">
+<manifest version="8.0" type="device" target-level="202404">
     <hal format="aidl">
         <name>android.hardware.secure_element</name>
         <fqname>ISecureElement/eSE1</fqname>
@@ -28,6 +28,6 @@
         <fqname>IMiwillAIDLService/default</fqname>
     </hal>
     <sepolicy>
-        <version>202504</version>
+        <version>202404</version>
     </sepolicy>
 </manifest>
