@@ -83,4 +83,19 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ] || echo "$1" | grep
 
 	# Additional configurations
 	export FOX_NO_BLANK_DT2W=1
+
+	# Apply device-specific source patches
+	fox_apply_source_patches() {
+		local script_path="${BASH_SOURCE[0]}"
+		[ -n "$ZSH_VERSION" ] && script_path="${(%):-%x}"
+		local dev_dir="$(cd "$(dirname "$script_path")" 2>/dev/null && pwd)"
+		if [ -n "$dev_dir" ] && [ -f "$dev_dir/apply-source-patches.sh" ]; then
+			if bash "$dev_dir/apply-source-patches.sh"; then
+				echo "-- [pudding] Source patches applied successfully."
+			else
+				echo "-- [pudding] Warning: Failed to apply source patches."
+			fi
+		fi
+	}
+	fox_apply_source_patches
 fi

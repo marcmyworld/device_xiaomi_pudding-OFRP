@@ -50,11 +50,15 @@ on fs
     install_keyring
     start vendor.qseecomd
 
+on post-fs
+    start odm.vibratorfeature-hal-service
+
 on boot
     setprop sys.usb.config adb
 
 
 on property:twrp.modules.loaded=true
+    start odm.touch_report
     # Mount firmware
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
@@ -67,8 +71,6 @@ on property:twrp.modules.loaded=true
     start vendor.wait-adsp
 
 on property:vendor.sys.listeners.registered=true
-    start odm.vibratorfeature-hal-service
-    start odm.touch_report
     start vendor.secure_element
     start odm.weaver_hal_service
 
