@@ -15,7 +15,7 @@
 /mi_ext                auto    mi_ext                                                             flags=display="mi_ext"
 
 # Metadata/Cache/Misc Properties
-/metadata              f2fs    /dev/block/bootdevice/by-name/metadata                             flags=display="metadata";backup=1
+/metadata              f2fs    /dev/block/bootdevice/by-name/metadata                             flags=display="metadata";backup=1;wipeingui=0
 /cache                 auto    /dev/block/bootdevice/by-name/rescue                               flags=display="cache";backup=1;wipeingui;wipeduringfactoryreset
 /misc                  emmc    /dev/block/bootdevice/by-name/misc                                 flags=display="misc";backup=1;flashimg=1
 
