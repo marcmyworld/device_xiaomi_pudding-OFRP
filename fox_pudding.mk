@@ -100,6 +100,9 @@ OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 # Workaround for TWRP backup/restore bugs on modern Android versions
 OF_WORKAROUND_BACKUP_BUG := 1
 
+# Quick backup default selection list
+OF_QUICK_BACKUP_LIST := /boot;/init_boot;/vendor_boot;
+
 # Enable FRP (Factory Reset Protection) partition wiping addon
 OF_ENABLE_FRP_ADDON := 1
 
