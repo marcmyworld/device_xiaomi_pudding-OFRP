@@ -1,28 +1,35 @@
-# TWRP device tree for Xiaomi SM8850
+# Xiaomi 17 (Pudding) OrangeFox device tree
 
-## Supported devices
+<p align="center">
+  <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-17-2.jpg" alt="Description of image" width="700">
+</p>
 
-| Codename | Device               |
-| -------- | -------------------- |
-| pudding  | Xiaomi 17            |
-| pandora  | Xiaomi 17 Pro        |
-| popsicle | Xiaomi 17 Pro Max \* |
-| nezha    | Xiaomi 17 Ultra      |
 
-\* Primary test device
+## 1. Working
 
-## Features
+### Hardware
+
+- [x] Display
+- [x] Vibrator
+- [x] Touch
+- [x] Flashlight
+- [x] Battery percentage
+
+### Others
 
 - [x] ADB
 - [x] Decryption
-- [x] Display
-- [x] Fastbootd
-- [x] Flashing
 - [x] MTP
+- [x] Flashing
 - [x] Sideload
-- [x] USB-OTG
-- [x] Vibrator
+
+## 2. Not tested / May work
+
+- [ ] USB-OTG ?
+- [ ] Fastbootd ?
+
+* WLAN support not planned as of now.
 
 ## Build it yourself
 
-- [TWRP-Test/platform_manifest_twrp_aosp](https://github.com/TWRP-Test/platform_manifest_twrp_aosp)
+- [marcmyworld/Action-OFRP-Builder](https://github.com/marcmyworld/Action-OFRP-Builder)
