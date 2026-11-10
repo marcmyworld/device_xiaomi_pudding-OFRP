@@ -72,6 +72,8 @@ on property:twrp.modules.loaded=true
 
 on property:vendor.sys.listeners.registered=true
     start vendor.secure_element
+
+on property:init.svc.vendor.secure_element=running
     start odm.weaver_hal_service
 
 on property:twrp.adsp.ready=true
