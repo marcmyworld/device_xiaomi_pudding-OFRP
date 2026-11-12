@@ -120,3 +120,6 @@ OF_USE_LZ4_COMPRESSION := 1
 
 # Enable filesystem compression support (F2FS / EROFS)
 OF_ENABLE_FS_COMPRESSION := 1
+
+# Default vibration durations in ms [button,keyboard,action]
+OF_VIBRATION_DEFAULTS := 10,10,160
