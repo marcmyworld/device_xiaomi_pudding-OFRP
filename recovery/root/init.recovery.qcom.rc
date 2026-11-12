@@ -25,6 +25,10 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    wait /sys/fs/selinux/enforce
+    write /sys/fs/selinux/enforce 0
+
 on init
     start vendor.boot-qti
 
