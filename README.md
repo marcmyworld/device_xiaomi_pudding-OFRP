@@ -5,7 +5,7 @@
 </p>
 
 
-## 1. Working
+## Features status
 
 ### Hardware
 
@@ -22,11 +22,8 @@
 - [x] MTP
 - [x] Flashing
 - [x] Sideload
-
-## 2. Not tested / May work
-
-- [ ] USB-OTG ?
-- [ ] Fastbootd ?
+- [x] USB-OTG
+- [x] Fastbootd
 
 * WLAN support not planned as of now.
 
